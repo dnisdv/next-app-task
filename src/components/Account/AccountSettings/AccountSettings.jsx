@@ -165,7 +165,7 @@ const AccountSettings = ({setSettings}) => {
                     justify="center"
                     alignItems="center">
                         <Box component="div" className={classes.InputWrapper}>
-                            <AssignmentIndIcon className={classes.Icon} style={{ width:"30px", height:"30px" }}  color="secondary" />
+                            <AssignmentIndIcon className={classes.Icon} style={{ fontSize:"36px" }}  color="secondary" />
                             <TextField
                                 error={!!(FormData.isError.name)}
                                 onChange={formValChange}
@@ -193,7 +193,7 @@ const AccountSettings = ({setSettings}) => {
                         </Box>
                         <Box component="div" className={classes.InputWrapper}>
                             <Divider className={classes.Divider} orientation="vertical" flexItem light/>
-                            <AlternateEmailIcon className={classes.Icon} style={{fontSize:"30px" }} color="secondary" />
+                            <AlternateEmailIcon className={classes.Icon} style={{fontSize:"36px" }} color="secondary" />
                                 <TextField
                                     error={!!(FormData.isError.email)}
                                     onChange={formValChange}
@@ -221,7 +221,7 @@ const AccountSettings = ({setSettings}) => {
                         </Box>
                         <Box component="div"  className={classes.InputWrapper}>
                             <Divider className={classes.Divider} orientation="vertical" flexItem light/>
-                            <PhoneIcon className={classes.Icon} style={{ fontSize:"27px" }} color="secondary" />
+                            <PhoneIcon className={classes.Icon} style={{ fontSize:"36px" }} color="secondary" />
                             <TextField
                                 error={!!(FormData.isError.phone)}
                                 onChange={formValChange}
@@ -321,12 +321,12 @@ const useStyles = makeStyles((theme) => ({
         color:theme.palette.common.white,
         textTransform:"none",
         boxShadow:"none",
-        "&:active":{
-            boxShadow:"none",
-        },
-        "&:hover":{
-            boxShadow:"none",
-        },
+            "&:active":{
+                boxShadow:"none",
+            },
+            "&:hover":{
+                boxShadow:"none",
+            },
         [theme.breakpoints.up('lg')]: {
             marginBottom:"44px",
             marginTop:"29px"

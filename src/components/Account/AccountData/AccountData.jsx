@@ -62,15 +62,15 @@ const useStyles = makeStyles((theme) =>({
         },
     },
     MailIcon:{
-        fontSize:"20px",
+        fontSize:"24px",
         [theme.breakpoints.up('lg')]: {
-            fontSize:"30px"
+            fontSize:"36px"
         },
     },
     PhoneIcon:{
-        fontSize:"18px",
+        fontSize:"24px",
         [theme.breakpoints.up('lg')]: {
-            fontSize:"27px"
+            fontSize:"36px"
         },
     }
 }))

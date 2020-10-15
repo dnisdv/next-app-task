@@ -19,7 +19,7 @@ const myModal = ({open, onClose, confirmSubmit, confirmed, closeModalSubmit}) =>
             justify="center"
             alignItems="center">
         <Typography className={classes.ModalTitle}>Сохранить изменения?</Typography>
-            <Box mt="40px">
+            <Box className={classes.ButtonSaveWrapper} >
               <Button 
                   onClick={confirmSubmit}
                   type='submit'
@@ -29,7 +29,7 @@ const myModal = ({open, onClose, confirmSubmit, confirmed, closeModalSubmit}) =>
                   <Typography className={classes.ButtonTypography} color="inherit" >Сохранить</Typography>
               </Button>
             </Box>
-            <Box mt="28px">
+            <Box className={classes.ButtonNoSaveWrapper}>
               <Button  onClick={onClose}
                   type='submit'
                   className={classes.Button}
@@ -96,6 +96,7 @@ const useStyles = makeStyles( (theme) => ({
     position:'fixed',
     bottom:"0",
     width:"100vw",  
+    minHeight:"83px",
     height: props => !props.confirmed ? "75vh" : "10vh",
     backgroundColor:"white",
     borderTopRightRadius:'22px',
@@ -132,10 +133,20 @@ const useStyles = makeStyles( (theme) => ({
         boxShadow:"none",
   },
   },
+  ButtonSaveWrapper:{
+    marginTop:"40px",
+    [theme.breakpoints.up('lg')]: {
+      marginTop:"32px"
+    }
+  },
+  ButtonNoSaveWrapper:{
+    marginTop:"28px",
+  },
   closeIcon:{
     position:"absolute",
     right:"20px",
-    top:"20px"
+    top:"20px",
+    color:"#828282"
   },
   FeedBack:{
     fontSize:"1.125rem",
