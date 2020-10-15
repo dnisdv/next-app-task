@@ -1,65 +1,43 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import TopBar from '../src/components/AppBar/AppBar'
+import { Box } from '@material-ui/core'
+import CustomBreadcrumbs from '../src/components/BreadCrumbs/Breadcrumbs'
+import {makeStyles} from '@material-ui/core'
+import Account from '../src/components/Account/Account'
 
-export default function Home() {
+
+const Home = () => {
+  const classes = useStyles()
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    <Box className={classes.root}>
+        <img src="img/background_main.png" className={classes.backgroundDecoration} alt="Background decoration" />
+      <Box px={1.25}>
+          <TopBar />
+          <CustomBreadcrumbs />
+          <Account />
+      </Box>
+    </Box>
   )
 }
+
+const useStyles = makeStyles((theme) =>({
+  root:{
+    [theme.breakpoints.up('lg')]: {
+      width:theme.breakpoints.values.lg,
+      margin:"0 auto"
+    },
+  },
+  backgroundDecoration :{
+    position: "fixed",
+    width: "100vw",
+    height: "199px",
+    top:"-",
+    zIndex: "-1",
+    left:"0",
+    [theme.breakpoints.up('lg')]: {
+      height:"470px"
+    }
+}
+}))
+
+export default Home
