@@ -146,7 +146,8 @@ const useStyles = makeStyles( (theme) => ({
     position:"absolute",
     right:"20px",
     top:"20px",
-    color:"#828282"
+    color:"#828282",
+    cursor:"pointer"
   },
   FeedBack:{
     fontSize:"1.125rem",
